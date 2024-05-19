@@ -1,0 +1,27 @@
+.Button {
+  cursor: pointer;
+  
+  color: var(--button-color);
+  padding: 5px 10px;
+  border: none;
+  background-color: var(--button-bg-color);
+  font-size: 16px;
+  height: 40px;
+  border-radius: 5px;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: auto;
+  }
+}
+
+.isIcon {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+
+}

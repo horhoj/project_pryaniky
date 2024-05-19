@@ -1,0 +1,23 @@
+.authLayoutWrapper {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.AuthLayout {
+  max-width: 400px;
+  width: 100%;
+  background-color: var(--main-bg-color);
+  padding: 20px 15px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+}

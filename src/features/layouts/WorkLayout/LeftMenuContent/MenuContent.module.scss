@@ -1,0 +1,16 @@
+.MenuContent {
+  background-color: var(--main-bg-color);
+  display: flex;
+  gap: 33px;
+  flex-grow: 1;
+  flex-direction: column;
+  min-width: var(--left-menu-width);
+  max-width: var(--left-menu-width);
+  padding: 10px 15px;
+  min-height: 100%;
+}
+
+.MenuContentDesktop {
+  flex-direction: row !important;
+  justify-content: flex-end;
+}

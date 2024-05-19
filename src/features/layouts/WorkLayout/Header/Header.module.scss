@@ -1,0 +1,13 @@
+.Header {
+  min-height: var(--header-height);
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 0 18px;
+  align-items: center;
+  gap: 10px;
+  
+  @media (min-width: 600px) {
+    padding: 0 60px;
+  }
+}

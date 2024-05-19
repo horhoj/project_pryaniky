@@ -1,0 +1,31 @@
+.WorkLayout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--main-bg-color);
+}
+
+.content {
+  padding: 15px;
+}
+
+.nav {
+  display: flex;
+}
+
+.main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.headerLeftBlock {
+  display: flex;
+  gap: 10px;
+}
+
+.right {
+  margin: auto 0 auto auto;
+}
