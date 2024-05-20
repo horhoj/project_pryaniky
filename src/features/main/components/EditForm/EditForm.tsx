@@ -47,6 +47,7 @@ export function EditForm() {
             responseErrors={patchUserdocRequest.error}
             onSubmit={handleSubmit}
             title={'Edit doc'}
+            onCancel={handleClose}
           />
         )}
       </div>

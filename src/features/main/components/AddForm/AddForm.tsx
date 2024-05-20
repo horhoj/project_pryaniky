@@ -44,6 +44,7 @@ export function AddForm() {
             title={'Add doc'}
             isLoading={addUserdocRequest.isLoading}
             responseErrors={addUserdocRequest.error}
+            onCancel={handleClose}
           />
         )}
       </div>

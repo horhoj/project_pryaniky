@@ -18,6 +18,7 @@ interface DocumentFormProps {
   responseErrors: ApiError | null;
   initialValues: Userdoc;
   onSubmit: (values: Userdoc) => void;
+  onCancel: () => void;
   title: string;
 }
 
@@ -40,6 +41,7 @@ export function DocumentForm({
   initialValues,
   onSubmit,
   title,
+  onCancel,
 }: DocumentFormProps) {
   const formik = useFormik<Userdoc>({
     initialValues,
@@ -178,10 +180,14 @@ export function DocumentForm({
             />
           </FormField>
         </Flex>
-
-        <Button type={'submit'} disabled={isLoading}>
-          Submit
-        </Button>
+        <Flex>
+          <Button type={'submit'} disabled={isLoading}>
+            Submit
+          </Button>
+          <Button type={'button'} disabled={isLoading} onClick={onCancel}>
+            Cancel
+          </Button>
+        </Flex>
       </Form>
     </>
   );
