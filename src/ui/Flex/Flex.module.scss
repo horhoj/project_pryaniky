@@ -2,6 +2,10 @@
   display: flex;
   gap: 15px;
   width: 100%;
+
+}
+
+.isModal {
   @media (max-width: 600px) {
     flex-direction: column;
   }

@@ -44,7 +44,6 @@ const { actions, reducer } = createSlice({
   initialState,
   name: SLICE_NAME,
   reducers: {
-    clear: () => initialState,
     setFetchUserDocsRequest: (
       state,
       action: PayloadAction<

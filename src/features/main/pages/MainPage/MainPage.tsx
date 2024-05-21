@@ -41,9 +41,7 @@ export function MainPage() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    return () => {
-      dispatch(mainDataSlice.thunks.fetchUserdocsThunk());
-    };
+    dispatch(mainDataSlice.thunks.fetchUserdocsThunk());
   }, []);
 
   const handleDelete = (rowId: string) => {
@@ -86,7 +84,7 @@ export function MainPage() {
             title={'Fetch error'}
           />
         )}
-        <Flex>
+        <Flex isAdaptive={false}>
           <Button
             onClick={handleAdd}
             className={styles.docListBtn}
@@ -102,7 +100,6 @@ export function MainPage() {
             refetch docs
           </Button>
         </Flex>
-        {/* <DevView data={fetchUserdocsRequest} /> */}
         {fetchUserdocsRequest.data?.data && (
           <Table<FetchUserdocsResponseDataItem>
             data={fetchUserdocsRequest.data.data}

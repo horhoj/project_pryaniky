@@ -23,15 +23,22 @@ interface DocumentFormProps {
 }
 
 const VALIDATION_IS_EMPTY_MSG = 'required';
+const VALIDATION_IS_NOT_DATE = 'not date';
 
 const validationSchema = yup.object({
   documentName: yup.string().required(VALIDATION_IS_EMPTY_MSG),
-  companySigDate: yup.date().required(VALIDATION_IS_EMPTY_MSG),
+  companySigDate: yup
+    .date()
+    .typeError(VALIDATION_IS_NOT_DATE)
+    .required(VALIDATION_IS_EMPTY_MSG),
   companySignatureName: yup.string().required(VALIDATION_IS_EMPTY_MSG),
   documentStatus: yup.string().required(VALIDATION_IS_EMPTY_MSG),
   documentType: yup.string().required(VALIDATION_IS_EMPTY_MSG),
   employeeNumber: yup.string().required(VALIDATION_IS_EMPTY_MSG),
-  employeeSigDate: yup.date().required(VALIDATION_IS_EMPTY_MSG),
+  employeeSigDate: yup
+    .date()
+    .typeError(VALIDATION_IS_NOT_DATE)
+    .required(VALIDATION_IS_EMPTY_MSG),
   employeeSignatureName: yup.string().required(VALIDATION_IS_EMPTY_MSG),
 });
 

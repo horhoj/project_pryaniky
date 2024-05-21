@@ -9,7 +9,6 @@ import {
 } from '~/store/helpers';
 import { getApiErrors } from '~/api/common';
 import { ApiError } from '~/api/common.types';
-import { mainDataSlice } from '~/features/main/store/mainDataSlice';
 import { settingsSlice } from '~/features/settings/store/settingsSlice';
 
 interface IS {
@@ -62,7 +61,6 @@ const loginThunk = createAsyncThunk(
     try {
       await authApi.login(payload.loginPayload);
       store.dispatch(actions.setIsAuth(true));
-      store.dispatch(mainDataSlice.thunks.fetchUserdocsThunk());
       store.dispatch(
         settingsSlice.actions.setUserName(payload.loginPayload.username),
       );

@@ -1,10 +1,9 @@
 import { mainDataSlice } from '../../store/mainDataSlice';
 import { Userdoc } from '../../types';
 import { DocumentForm } from '../DocumentForm';
-import styles from './AddForm.module.scss';
-
 import { Modal } from '~/ui/Modal';
 import { useAppDispatch, useAppSelector } from '~/store/hooks';
+import { ModalContent } from '~/ui/Modal/ModalContent';
 
 const initialState: Userdoc = {
   companySigDate: '',
@@ -36,18 +35,16 @@ export function AddForm() {
 
   return (
     <Modal isOpen={isAdd} onClose={handleClose}>
-      <div className={styles.AddForm} onMouseDown={(e) => e.stopPropagation()}>
-        {isAdd && (
-          <DocumentForm
-            initialValues={initialState}
-            onSubmit={handleSubmit}
-            title={'Add doc'}
-            isLoading={addUserdocRequest.isLoading}
-            responseErrors={addUserdocRequest.error}
-            onCancel={handleClose}
-          />
-        )}
-      </div>
+      <ModalContent>
+        <DocumentForm
+          initialValues={initialState}
+          onSubmit={handleSubmit}
+          title={'Add doc'}
+          isLoading={addUserdocRequest.isLoading}
+          responseErrors={addUserdocRequest.error}
+          onCancel={handleClose}
+        />
+      </ModalContent>
     </Modal>
   );
 }

@@ -3,9 +3,9 @@ import { mainDataSlice } from '../../store/mainDataSlice';
 import { Userdoc } from '../../types';
 import { DocumentForm } from '../DocumentForm';
 import { getUserdocForEdit } from '../../helpers';
-import styles from './EditForm.module.scss';
 import { useAppDispatch, useAppSelector } from '~/store/hooks';
 import { Modal } from '~/ui/Modal';
+import { ModalContent } from '~/ui/Modal/ModalContent';
 
 export function EditForm() {
   const dispatch = useAppDispatch();
@@ -39,7 +39,7 @@ export function EditForm() {
 
   return (
     <Modal isOpen={isEdit} onClose={handleClose}>
-      <div className={styles.EditForm} onMouseDown={(e) => e.stopPropagation()}>
+      <ModalContent>
         {initialState && (
           <DocumentForm
             initialValues={initialState}
@@ -50,7 +50,7 @@ export function EditForm() {
             onCancel={handleClose}
           />
         )}
-      </div>
+      </ModalContent>
     </Modal>
   );
 }
