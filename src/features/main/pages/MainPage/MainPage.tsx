@@ -64,13 +64,12 @@ export function MainPage() {
     dispatch(mainDataSlice.thunks.fetchUserdocsThunk());
   };
 
+  const isLoading =
+    fetchUserdocsRequest.isLoading || deleteUserdocsRequest.isLoading;
+
   return (
     <>
-      <Spinner
-        isShow={
-          fetchUserdocsRequest.isLoading || deleteUserdocsRequest.isLoading
-        }
-      />
+      <Spinner isShow={isLoading} />
       <EditForm />
       <AddForm />
 
@@ -88,10 +87,18 @@ export function MainPage() {
           />
         )}
         <Flex>
-          <Button onClick={handleAdd} className={styles.docListBtn}>
+          <Button
+            onClick={handleAdd}
+            className={styles.docListBtn}
+            disabled={isLoading}
+          >
             add userdoc
           </Button>
-          <Button onClick={handleRefetch} className={styles.docListBtn}>
+          <Button
+            onClick={handleRefetch}
+            className={styles.docListBtn}
+            disabled={isLoading}
+          >
             refetch docs
           </Button>
         </Flex>
@@ -102,6 +109,7 @@ export function MainPage() {
             columns={COLUMNS}
             onDelete={handleDelete}
             onEdit={handleEdit}
+            isLoading={isLoading}
           />
         )}
       </WorkLayout>

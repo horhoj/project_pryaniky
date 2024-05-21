@@ -9,6 +9,7 @@ interface TableProps<T extends DataItem> {
   data: T[];
   onDelete: (rowId: string) => void;
   onEdit: (rowId: string) => void;
+  isLoading: boolean;
 }
 
 export type Columns<T extends DataItem> = NonNullable<
@@ -20,6 +21,7 @@ export function Table<T extends DataItem>({
   data,
   onDelete,
   onEdit,
+  isLoading,
 }: TableProps<T>) {
   return (
     <div className={styles.tableWrapper}>
@@ -42,12 +44,14 @@ export function Table<T extends DataItem>({
                   <Button
                     onClick={() => onEdit(row.id)}
                     className={styles.actionBtn}
+                    disabled={isLoading}
                   >
                     E
                   </Button>
                   <Button
                     onClick={() => onDelete(row.id)}
                     className={styles.actionBtn}
+                    disabled={isLoading}
                   >
                     D
                   </Button>
